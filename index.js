@@ -7,6 +7,8 @@ const app = express();
 
 // get expres to serve static content to the user (images, css, js, etc)
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 // register handlebars as the templating engine
 app.engine('.hbs', engine({extname: '.hbs'}));
